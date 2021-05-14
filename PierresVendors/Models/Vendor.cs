@@ -35,5 +35,12 @@ namespace PierresVendors.Models
       return _vendors[id - 1];
     }
 
+    public void AddOrder(Order order)
+    {
+      Order wrongOrder = new Order(14, 3, "cronuts", "EVERY DAMN DAY, WOOOOO!");
+      List<Order> wrongList = new List<Order> { wrongOrder };
+      Orders.Add(wrongOrder);
+    }
+
   }
 }

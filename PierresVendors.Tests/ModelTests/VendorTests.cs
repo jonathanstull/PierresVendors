@@ -72,6 +72,28 @@ namespace PierresVendors.Tests
       Assert.AreEqual(newVendor2, foundVendor);
     }
 
+    [TestMethod]
+    public void SixthAddItem_AssociatesOrderWithVendor_OrderList()
+    {
+      // Arrange
+      int orderNumber = 01;
+      int quantity = 300;
+      string item = "old fashioneds";
+      string deliveryDate = "5.14.21";
+      Order newOrder = new Order(orderNumber, quantity, item, deliveryDate);
+      List<Order> orders = new List<Order> { newOrder };
+      string name = "RAAAAANDY'S ROCKSTARS";
+      string description = "Up-tempo energy drink specialist; orders 300 daily old fashioneds; avoid direct interaction";
+      Vendor randyAgain = new Vendor(name, description);
+
+      // Act
+      randyAgain.AddOrder(newOrder);
+      List<Order> result = randyAgain.Orders;
+
+      // Assert
+      CollectionAssert.AreEqual(orders, result);
+    }
+
 
   }
 }
