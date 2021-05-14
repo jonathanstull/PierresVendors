@@ -11,7 +11,7 @@ namespace PierresVendors.Tests
 
     // 1st test
     [TestMethod]
-    public void First_OrderConstructor_CreatesInstanceOfOrder_Order()
+    public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
       Order newOrder = new Order(01, 300, "old fashioneds", "5.14.21");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
@@ -19,7 +19,7 @@ namespace PierresVendors.Tests
 
     // 2nd test
     [TestMethod]
-    public void Second_GetDeliveryDate_ReturnsOrderDeliveryDate_String()
+    public void GetDeliveryDate_ReturnsOrderDeliveryDate_String()
     {
       // Arrange
       string deliveryDate = "5.14.21";
