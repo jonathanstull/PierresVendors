@@ -31,5 +31,25 @@ namespace PierresVendors.Tests
       // Assert
       Assert.AreEqual(deliveryDate, result);
     }
+
+    // 3rd test
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      // Arrange
+      int orderNumber = 01;
+      int quantity = 300;
+      string item = "old fashioneds";
+      string deliveryDate = "5.14.21";
+      Order newOrder = new Order(orderNumber, quantity, item, deliveryDate);
+      Order newOrder2 = new Order(quantity, orderNumber, item, deliveryDate);
+      List<Order> orderList = new List<Order> { newOrder, newOrder2 };
+      
+      // Act
+      List<Order> result = Order.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(orderList, result);
+    }
   }
 }
