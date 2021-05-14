@@ -29,5 +29,10 @@ namespace PierresVendors.Models
     {
       return _orders;
     }
+
+    public static Order Find(int orderNumber)
+    {
+      return _orders[orderNumber];
+    }
   }
 }

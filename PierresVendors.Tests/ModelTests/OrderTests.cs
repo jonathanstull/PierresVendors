@@ -35,6 +35,21 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void GetAll_ReturnsOrders_OrderList()
     {
+      int quantity = 300;
+      int quantity2 = 150;
+      string item = "old fashioneds";
+      string deliveryDate = "5.14.21";
+      Order newOrder = new Order(quantity, item, deliveryDate);
+      Order newOrder2 = new Order(quantity2, item, deliveryDate);
+      List<Order> orderList = new List<Order> { newOrder, newOrder2 };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(orderList, result);
+    }
+
+    // 4th test
+    [TestMethod]
+    public void Find_ReturnsSpecificOrderByOrderNumber_Order()
+    {
       // Arrange
       int quantity = 300;
       int quantity2 = 150;
@@ -43,12 +58,12 @@ namespace PierresVendors.Tests
       Order newOrder = new Order(quantity, item, deliveryDate);
       Order newOrder2 = new Order(quantity2, item, deliveryDate);
       List<Order> orderList = new List<Order> { newOrder, newOrder2 };
-      
+
       // Act
-      List<Order> result = Order.GetAll();
+      Order foundOrder = Order.Find(2);
 
       // Assert
-      CollectionAssert.AreEqual(orderList, result);
+      Assert.AreEqual(newOrder2, foundOrder);
     }
   }
 }
