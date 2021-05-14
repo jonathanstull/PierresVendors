@@ -6,8 +6,12 @@ using System.Collections.Generic;
 namespace PierresVendors.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
 
     // 1st test
     [TestMethod]
@@ -44,6 +48,8 @@ namespace PierresVendors.Tests
       Order newOrder = new Order(orderNumber, quantity, item, deliveryDate);
       Order newOrder2 = new Order(quantity, orderNumber, item, deliveryDate);
       List<Order> orderList = new List<Order> { newOrder, newOrder2 };
+      Console.WriteLine(orderList[0].Quantity);
+      Console.WriteLine(orderList[1].Quantity);
       
       // Act
       List<Order> result = Order.GetAll();
