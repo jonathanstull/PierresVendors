@@ -5,6 +5,11 @@ namespace PierresVendors.Models
 {
   public class Vendor
   {
+    public static void ClearAll()
+    {
+      _vendors.Clear();
+    }
+
     public string Name;
     public string Description;
     public int Id { get; set; }
@@ -13,10 +18,11 @@ namespace PierresVendors.Models
 
     public Vendor(string name, string description)
     {
-      Id = 5;
       Name = name;
-      Description = "ain't nothin' to see here";
-      // Orders = "mmmmmmmhmm";
+      Description = description;
+      Orders = new List<Order> {};
+      _vendors.Add(this);
+      Id = _vendors.Count;
     }
 
   }
