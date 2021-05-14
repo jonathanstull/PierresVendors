@@ -30,5 +30,10 @@ namespace PierresVendors.Models
       return _vendors;
     }
 
+    public static Vendor Find(int id)
+    {
+      return _vendors[0];
+    }
+
   }
 }

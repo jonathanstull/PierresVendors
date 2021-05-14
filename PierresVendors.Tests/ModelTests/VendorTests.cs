@@ -32,36 +32,44 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void GetId_ReturnsVendorIdAmongOtherThings_IntId()
     {
-      // Arrange
       string name = "Breakneck Bistro";
       string description = "Cafeteria-service bistro; orders 5 dozen daily pastries";
       List<Order> vendorOrders = new List<Order> {};
-
-      // Act
       int testId = 1;
       Vendor newVendor = new Vendor(name, description);
-
-      // Assert
       Assert.AreEqual(testId, newVendor.Id);
     }
 
     [TestMethod]
     public void GetAll_ReturnsAllVendorObjects_VendorList()
     {
-      // Arrange
       string name = "RAAAAANDY'S ROCKSTARS";
       string description = "Up-tempo energy drink specialist; orders 300 daily old fashioneds; avoid direct interaction";
       string name2 = "Broder Nord";
       string description2 = "upscale cafe; orders 2 weekly sourdough starters";
       Vendor newVendor1 = new Vendor(name, description);
       Vendor newVendor2 = new Vendor(name2, description2);
-
-      // Act
       List<Vendor> vendorsList = new List<Vendor> { newVendor1, newVendor2 };
       List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(vendorsList, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendorById_Vendor()
+    {
+      // Arrange
+      string name = "RAAAAANDY'S ROCKSTARS";
+      string description = "Up-tempo energy drink specialist; orders 300 daily old fashioneds; avoid direct interaction";
+      string name2 = "Broder Nord";
+      string description2 = "upscale cafe; orders 2 weekly sourdough starters";
+      
+      // Act
+      Vendor newVendor1 = new Vendor(name, description);
+      Vendor newVendor2 = new Vendor(name2, description2);
+      Vendor foundVendor = Vendor.Find(2);
 
       // Assert
-      CollectionAssert.AreEqual(vendorsList, result);
+      Assert.AreEqual(newVendor2, foundVendor);
     }
 
 
