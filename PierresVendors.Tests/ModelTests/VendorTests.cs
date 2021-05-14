@@ -13,6 +13,7 @@ namespace PierresVendors.Tests
       Vendor.ClearAll();
     }
 
+    // 1st test
     [TestMethod]
     public void FirstVendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -20,8 +21,9 @@ namespace PierresVendors.Tests
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
+    // 2nd test
     [TestMethod]
-    public void SecondGetName_ReturnsName_String()
+    public void GetName_ReturnsName_String()
     {
       string name = "test vendor";
       Vendor newVendor = new Vendor(name, "test description");
@@ -29,8 +31,9 @@ namespace PierresVendors.Tests
       Assert.AreEqual(name, result);
     }
 
+    // 3rd test
     [TestMethod]
-    public void ThirdGetId_ReturnsVendorIdAmongOtherThings_IntId()
+    public void GetId_ReturnsVendorIdAmongOtherThings_IntId()
     {
       string name = "Breakneck Bistro";
       string description = "Cafeteria-service bistro; orders 5 dozen daily pastries";
@@ -40,8 +43,9 @@ namespace PierresVendors.Tests
       Assert.AreEqual(testId, newVendor.Id);
     }
 
+    // 4th test
     [TestMethod]
-    public void FourthGetAll_ReturnsAllVendorObjects_VendorList()
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
     {
       string name = "RAAAAANDY'S ROCKSTARS";
       string description = "Up-tempo energy drink specialist; orders 300 daily old fashioneds; avoid direct interaction";
@@ -54,26 +58,23 @@ namespace PierresVendors.Tests
       CollectionAssert.AreEqual(vendorsList, result);
     }
 
+    // 5th test
     [TestMethod]
-    public void FifthFind_ReturnsCorrectVendorById_Vendor()
+    public void Find_ReturnsCorrectVendorById_Vendor()
     {
-      // Arrange
       string name = "RAAAAANDY'S ROCKSTARS";
       string description = "Up-tempo energy drink specialist; orders 300 daily old fashioneds; avoid direct interaction";
       string name2 = "Broder Nord";
       string description2 = "upscale cafe; orders 2 weekly sourdough starters";
-      
-      // Act
       Vendor newVendor1 = new Vendor(name, description);
       Vendor newVendor2 = new Vendor(name2, description2);
       Vendor foundVendor = Vendor.Find(2);
-
-      // Assert
       Assert.AreEqual(newVendor2, foundVendor);
     }
 
+    // 6th test
     [TestMethod]
-    public void SixthAddItem_AssociatesOrderWithVendor_OrderList()
+    public void AddItem_AssociatesOrderWithVendor_OrderList()
     {
       // Arrange
       int orderNumber = 01;

@@ -9,16 +9,15 @@ namespace PierresVendors.Tests
   public class OrderTests
   {
 
+    // 1st test
     [TestMethod]
     public void First_OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      // Arrange
       Order newOrder = new Order(01, 300, "old fashioneds", "5.14.21");
-
-      // Assert
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
+    // 2nd test
     [TestMethod]
     public void Second_GetDeliveryDate_ReturnsOrderDeliveryDate_String()
     {
