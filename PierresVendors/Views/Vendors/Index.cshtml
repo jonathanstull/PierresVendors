@@ -1,0 +1,15 @@
+@using PierresVendors.Models;
+
+<h1>Pierre, these are your loyal purveyors</h1>
+<p>Treat them well and they will love you forever.</p>
+
+@if (Model.Count == 0)
+{
+  <p><strong>Pierre, you don't have any vendors. Are you ok?</strong></p>
+}
+@foreach (Vendor vendor in Model)
+{
+  <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
+}
+
+<p><a href='/'>Return home</a></p>
