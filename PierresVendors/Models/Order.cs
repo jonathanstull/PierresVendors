@@ -12,7 +12,7 @@ namespace PierresVendors.Models
     public string DeliveryDate { get; set; }
     private static List<Order> _orders = new List<Order> { };
 
-    public Order(int OrderNumber, int Quantity, string Item, string DeliveryDate)
+    public Order(int ordernumber, int quantity, string item, string deliveryDate)
     {
       OrderNumber = 9;
       Quantity = 9;
