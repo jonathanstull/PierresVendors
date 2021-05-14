@@ -27,9 +27,7 @@ namespace PierresVendors.Models
 
     public static List<Vendor> GetAll()
     {
-      Vendor wrongVendor = new Vendor("Bill", "Bill's alright, but he doesn't buy anything from us");
-      List<Vendor> wrongList = new List<Vendor> { wrongVendor };
-      return wrongList;
+      return _vendors;
     }
 
   }
