@@ -32,7 +32,7 @@ namespace PierresVendors.Models
 
     public static Order Find(int orderNumber)
     {
-      return _orders[orderNumber];
+      return _orders[orderNumber - 1];
     }
   }
 }
