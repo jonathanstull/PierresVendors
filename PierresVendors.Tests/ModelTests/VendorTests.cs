@@ -15,7 +15,7 @@ namespace PierresVendors.Tests
 
     // 1st test
     [TestMethod]
-    public void FirstVendorConstructor_CreatesInstanceOfVendor_Vendor()
+    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
       Vendor newVendor = new Vendor("test vendor", "test description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
