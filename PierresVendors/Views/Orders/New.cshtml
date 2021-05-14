@@ -1,0 +1,13 @@
+<h2>Great job landing an order, Pierre</h2>
+
+<p>Add a new order using this form:</p>
+<form action='/vendors/@Model.Id/orders' method='post'>
+  <input id="id" name="id" type="hidden" value="@Model.Id">
+  <label for="item">Enter an item:</label>
+    <input id="item" name="item" type="text">
+  <label for="quantity">Enter an order amount:</label>
+    <input id="quantity" name="quantity" type="number">
+  <label for="deliveryDate">Enter a delivery date:</label>
+    <input id="deliveryDate" name="deliveryDate" type="text">
+  <button type="submit">Add order</button>
+</form>

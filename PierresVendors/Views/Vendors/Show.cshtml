@@ -10,7 +10,7 @@
 <ol>
 @foreach (Order order in @Model["orders"])
 {
-  <li>@order.OrderNumber, @order.DeliveryDate : @order.Quantity @order.Item</li>
+  <li><strong>Order# @order.OrderNumber</strong>: delivering <strong>@order.DeliveryDate</strong> in the amount <strong>@order.Quantity of @order.Item</strong></li>
 }
 </ol>
 
