@@ -32,7 +32,7 @@ namespace PierresVendors.Models
 
     public static Vendor Find(int id)
     {
-      return _vendors[0];
+      return _vendors[id - 1];
     }
 
   }

@@ -14,14 +14,14 @@ namespace PierresVendors.Tests
     }
 
     [TestMethod]
-    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
+    public void FirstVendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
       Vendor newVendor = new Vendor("test vendor", "test description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
     [TestMethod]
-    public void GetName_ReturnsName_String()
+    public void SecondGetName_ReturnsName_String()
     {
       string name = "test vendor";
       Vendor newVendor = new Vendor(name, "test description");
@@ -30,7 +30,7 @@ namespace PierresVendors.Tests
     }
 
     [TestMethod]
-    public void GetId_ReturnsVendorIdAmongOtherThings_IntId()
+    public void ThirdGetId_ReturnsVendorIdAmongOtherThings_IntId()
     {
       string name = "Breakneck Bistro";
       string description = "Cafeteria-service bistro; orders 5 dozen daily pastries";
@@ -41,7 +41,7 @@ namespace PierresVendors.Tests
     }
 
     [TestMethod]
-    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    public void FourthGetAll_ReturnsAllVendorObjects_VendorList()
     {
       string name = "RAAAAANDY'S ROCKSTARS";
       string description = "Up-tempo energy drink specialist; orders 300 daily old fashioneds; avoid direct interaction";
@@ -55,7 +55,7 @@ namespace PierresVendors.Tests
     }
 
     [TestMethod]
-    public void Find_ReturnsCorrectVendorById_Vendor()
+    public void FifthFind_ReturnsCorrectVendorById_Vendor()
     {
       // Arrange
       string name = "RAAAAANDY'S ROCKSTARS";
