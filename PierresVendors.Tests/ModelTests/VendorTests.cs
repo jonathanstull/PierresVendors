@@ -11,7 +11,7 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test vendor");
+      Vendor newVendor = new Vendor("test vendor", "test description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -20,7 +20,7 @@ namespace PierresVendors.Tests
     {
       // Arrange
       string name = "test vendor";
-      Vendor newVendor = new Vendor(name);
+      Vendor newVendor = new Vendor(name, "test description");
       
       // Act
       string result = newVendor.Name;
@@ -28,5 +28,23 @@ namespace PierresVendors.Tests
       // Assert
       Assert.AreEqual(name, result);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsVendorIdAmongOtherThings_IntId()
+    {
+      // Arrange
+      string name = "Breakneck Bistro";
+      string description = "Cafeteria-service bistro; orders 5 dozen daily pastries";
+      List<Order> vendorOrders = new List<Order> {};
+
+      // Act
+      int testId = 1;
+      Vendor newVendor = new Vendor(name, description);
+
+      // 
+      Assert.AreEqual(testId, newVendor.Id);
+    }
+
+
   }
 }

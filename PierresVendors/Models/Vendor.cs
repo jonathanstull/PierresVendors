@@ -11,9 +11,12 @@ namespace PierresVendors.Models
     public List<Order> Orders { get; set; }
     private static List<Vendor> _vendors = new List<Vendor> {};
 
-    public Vendor(string name)
+    public Vendor(string name, string description)
     {
+      Id = 5;
       Name = name;
+      Description = "ain't nothin' to see here";
+      // Orders = "mmmmmmmhmm";
     }
 
   }
