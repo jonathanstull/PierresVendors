@@ -23,14 +23,9 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
-      // Arrange
       string name = "test vendor";
       Vendor newVendor = new Vendor(name, "test description");
-      
-      // Act
       string result = newVendor.Name;
-
-      // Assert
       Assert.AreEqual(name, result);
     }
 
@@ -46,8 +41,27 @@ namespace PierresVendors.Tests
       int testId = 1;
       Vendor newVendor = new Vendor(name, description);
 
-      // 
+      // Assert
       Assert.AreEqual(testId, newVendor.Id);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      // Arrange
+      string name = "RAAAAANDY'S ROCKSTARS";
+      string description = "Up-tempo energy drink specialist; orders 300 daily old fashioneds; avoid direct interaction";
+      string name2 = "Broder Nord";
+      string description2 = "upscale cafe; orders 2 weekly sourdough starters";
+      Vendor newVendor1 = new Vendor(name, description);
+      Vendor newVendor2 = new Vendor(name2, description2);
+
+      // Act
+      List<Vendor> vendorsList = new List<Vendor> { newVendor1, newVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(vendorsList, result);
     }
 
 
