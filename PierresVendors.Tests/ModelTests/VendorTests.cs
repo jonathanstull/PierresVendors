@@ -77,11 +77,10 @@ namespace PierresVendors.Tests
     public void AddItem_AssociatesOrderWithVendor_OrderList()
     {
       // Arrange
-      int orderNumber = 01;
       int quantity = 300;
       string item = "old fashioneds";
       string deliveryDate = "5.14.21";
-      Order newOrder = new Order(orderNumber, quantity, item, deliveryDate);
+      Order newOrder = new Order(quantity, item, deliveryDate);
       List<Order> orders = new List<Order> { newOrder };
       string name = "RAAAAANDY'S ROCKSTARS";
       string description = "Up-tempo energy drink specialist; orders 300 daily old fashioneds; avoid direct interaction";

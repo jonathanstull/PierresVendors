@@ -17,7 +17,7 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order(01, 300, "old fashioneds", "5.14.21");
+      Order newOrder = new Order(300, "old fashioneds", "5.14.21");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -25,14 +25,9 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void GetDeliveryDate_ReturnsOrderDeliveryDate_String()
     {
-      // Arrange
       string deliveryDate = "5.14.21";
-      Order newOrder = new Order(01, 300, "old fashioneds", deliveryDate);
-
-      // Act
+      Order newOrder = new Order(300, "old fashioneds", deliveryDate);
       string result = newOrder.DeliveryDate;
-
-      // Assert
       Assert.AreEqual(deliveryDate, result);
     }
 
@@ -41,15 +36,13 @@ namespace PierresVendors.Tests
     public void GetAll_ReturnsOrders_OrderList()
     {
       // Arrange
-      int orderNumber = 01;
       int quantity = 300;
+      int quantity2 = 150;
       string item = "old fashioneds";
       string deliveryDate = "5.14.21";
-      Order newOrder = new Order(orderNumber, quantity, item, deliveryDate);
-      Order newOrder2 = new Order(quantity, orderNumber, item, deliveryDate);
+      Order newOrder = new Order(quantity, item, deliveryDate);
+      Order newOrder2 = new Order(quantity2, item, deliveryDate);
       List<Order> orderList = new List<Order> { newOrder, newOrder2 };
-      Console.WriteLine(orderList[0].Quantity);
-      Console.WriteLine(orderList[1].Quantity);
       
       // Act
       List<Order> result = Order.GetAll();

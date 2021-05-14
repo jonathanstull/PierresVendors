@@ -16,12 +16,12 @@ namespace PierresVendors.Models
     public string DeliveryDate { get; set; }
     private static List<Order> _orders = new List<Order> {};
 
-    public Order(int orderNumber, int quantity, string item, string deliveryDate)
+    public Order(int quantity, string item, string deliveryDate)
     {
-      OrderNumber = orderNumber;
       Quantity = quantity;
       Item = item;
       DeliveryDate = deliveryDate;
+      OrderNumber = _orders.Count;
       _orders.Add(this);
     }
 
