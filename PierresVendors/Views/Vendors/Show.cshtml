@@ -1,9 +1,19 @@
 @using PierresVendors.Models;
 
 <h1>@Model["vendor"].Name</h1>
-<ul>
-  <li>@Model["vendor"].Description</li>
-</ul>
 
+<h2>All orders:</h2>
+@if (@Model["orders"].Count == 0)
+{
+  <p>@Model["vendor"].Name has no orders, Pierre. Let's get them on the books.</p>
+}
+<ol>
+@foreach (Order order in @Model["orders"])
+{
+  <li>@order.OrderNumber, @order.DeliveryDate : @order.Quantity @order.Item</li>
+}
+</ol>
+
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
 <p><a href='/vendors/'>Return to your vendors</a></p>
 <p><a href='/'>Return home</a></p>

@@ -38,5 +38,7 @@ namespace PierresVendors.Controllers
       thisVendor.Add("orders", vendorOrders);
       return View(thisVendor);
     }
+
+    
   }
 }
